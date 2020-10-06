@@ -1,0 +1,633 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>CO1404 Week 1 Lab</title><link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; tab-size: 4; background-position: inherit inherit; background-repeat: inherit inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; word-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) { 
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font-family: inherit; font-size: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; line-height: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.701961); color: rgb(85, 85, 85); border-top-left-radius: 4px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right-width: 0px; background-color: inherit; }
+.CodeMirror-linenumber { }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; position: relative !important; background-position: inherit inherit; background-repeat: inherit inherit; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; background-position: 0px 0px; background-repeat: initial initial; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print { 
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid-page; break-before: avoid-page; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { break-after: avoid-page; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background-color: rgb(204, 204, 204); display: block; overflow-x: hidden; background-position: initial initial; background-repeat: initial initial; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-top-left-radius: 10px; border-top-right-radius: 10px; border-bottom-right-radius: 10px; border-bottom-left-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) { 
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background-color: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-top-left-radius: 3px; border-top-right-radius: 3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; background-position: initial initial; background-repeat: initial initial; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; }
+a.md-print-anchor { white-space: pre !important; border: none !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; text-shadow: initial !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; word-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom-width: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+svg[id^="mermaidChart"] { line-height: 1em; }
+mark { background-color: rgb(255, 255, 0); color: rgb(0, 0, 0); background-position: initial initial; background-repeat: initial initial; }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+mark .md-meta { color: rgb(0, 0, 0); opacity: 0.3 !important; }
+@media print { 
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+  .typora-export h1::after, .typora-export h2::after, .typora-export h3::after, .typora-export h4::after, .typora-export h5::after, .typora-export h6::after { content: ""; display: block; height: 100px; margin-bottom: -100px; }
+}
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-scroll { overflow-y: hidden; overflow-x: auto; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right-width: 1px; border-right-style: solid; border-right-color: rgb(221, 221, 221); background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; white-space: nowrap; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 30px; z-index: 3; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; border: none !important; background-position: 0px 0px !important; background-repeat: initial initial !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-top-left-radius: 0px; border-top-right-radius: 0px; border-bottom-right-radius: 0px; border-bottom-left-radius: 0px; border-width: 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; word-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; background-position: 0px 0px; background-repeat: initial initial; }
+.CodeMirror-wrap pre { word-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right-width: 30px; border-right-style: solid; border-right-color: transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right-style: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; left: 0px; right: 0px; top: 0px; bottom: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right-style: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background-color: rgba(255, 255, 0, 0.4); background-position: initial initial; background-repeat: initial initial; }
+@media print { 
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+:root {
+    --side-bar-bg-color: #fafafa;
+    --control-text-color: #777;
+}
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+/* open-sans-regular - latin-ext_latin */
+  /* open-sans-italic - latin-ext_latin */
+    /* open-sans-700 - latin-ext_latin */
+    /* open-sans-700italic - latin-ext_latin */
+  html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+	#write {
+		max-width: 1024px;
+	}
+}
+
+@media only screen and (min-width: 1800px) {
+	#write {
+		max-width: 1200px;
+	}
+}
+
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+a {
+    color: #4183C4;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+}
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        border-top: 1px solid #eee;
+        margin-top: .3em;
+    }
+}
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+h4 {
+    font-size: 1.25em;
+}
+h5 {
+    font-size: 1em;
+}
+h6 {
+   font-size: 1em;
+    color: #777;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+blockquote {
+    border-left: 4px solid #dfe2e5;
+    padding: 0 15px;
+    color: #777777;
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+}
+table tr:nth-child(2n),
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+
+.md-fences,
+code,
+tt {
+    border: 1px solid #e7eaed;
+    background-color: #f8f8f8;
+    border-radius: 3px;
+    padding: 0;
+    padding: 2px 4px 0px 4px;
+    font-size: 0.9em;
+}
+
+code {
+    background-color: #f3f4f4;
+    padding: 0 2px 0 2px;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences {
+	background-color: #f8f8f8;
+}
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
+
+
+</style>
+</head>
+<body class='typora-export'>
+<div id='write'  class=''><h1><a name="co1404--introduction-to-programming" class="md-header-anchor"></a><span>CO1404 : Introduction to Programming </span></h1><p><strong><span>Week1 - Introduction to Visual Studio and Simple programs</span></strong></p><hr /><p>&nbsp;</p><h3><a name="lab-summary" class="md-header-anchor"></a><span>Lab Summary</span></h3><p><span>This lab worksheet helps you write your first programs. Students who have experience programming should find it straightforward at first. However, there will be advanced questions later on. There&#39;s a lot of reading in this worksheet as we introduce the tools required. Later worksheets will tend to be shorter, with more work for you to do!</span></p><p><strong><span>Remember:</span></strong><span> If you have any questions or require assistance, please get your tutors attention. We are all here to help!</span></p><p>&nbsp;</p><h4><a name="objectives" class="md-header-anchor"></a><strong><span>Objectives</span></strong></h4><p><span>This Lab aims to achive the following objective(s) below:</span>
+<span>			</span>
+<strong><span>PO.1</span></strong><span>:  Introduce the development environment and programming language you will be using for this </span><span>			</span><span>module.</span></p><p>&nbsp;</p><h4><a name="work-sheet-key" class="md-header-anchor"></a><span>Work Sheet Key</span></h4><p><span>All the worksheets for this Module follow the same common conventions to assist you throughout.</span>
+<Insert Convertions here></p><hr /><h3><a name="reading-material" class="md-header-anchor"></a><span>Reading Material</span></h3><p><span>Below is some light reading material to accompany the lab worksheet.</span></p><p>&nbsp;</p><h4><a name="microsoft-visual-studio" class="md-header-anchor"></a><span>Microsoft Visual Studio</span></h4><p><span>Throughout this moudle will will be using </span><strong><em><span>Microsoft Visual Studio</span></em></strong><span>. As we have discssed in the lecture it is and IDE (Integrated Development Envrionment). This software has been made avaiable to you in many different locations to accomadate your learning preferences. The software is readily avaiable at the following locations:</span></p><ul><li><strong><span>UCLAN Lab PC&#39;s</span></strong><span> - via the Uclan Network.</span></li><li><strong><span>Azure Labs Virtual Machine</span></strong><span> - Visit </span><a href='https://labs.azure.com/' target='_blank' class='url'>https://labs.azure.com/</a><span> (Note: you will have to have registered, please check your UCLAN email for a registration link)</span></li></ul><p>&nbsp;</p><h4><a name="want-to-install-visual-studio-on-your-own-machine" class="md-header-anchor"></a><span>Want to install Visual Studio on your own machine?</span></h4><p><span>Alternativley, If you have your own machine (desktop or laptop), and would prefer to install it on that,  you can. I have provided the links below install </span><strong><span>Microsoft Visual Studio - Community Edition</span></strong><span> on </span><code>Microsoft Windows 10</code><span>  and </span><code>Apple Mac OS</code><span> .The partiucalr edition comes you will download comes with the plugins you require pre-configured so you do not have to do any additional configuration (</span><em><span>YAY!</span></em><span>). </span></p><ul><li><strong><span>Microsoft Windows Users</span></strong><span> : </span><a href='https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16' target='_blank' class='url'>https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&rel=16</a></li><li><strong><span>Apple Mac Users         :</span></strong><span> </span><a href='https://visualstudio.microsoft.com/thank-you-downloading-visual-studio-mac/?sku=communitymac&amp;rel=16' target='_blank' class='url'>https://visualstudio.microsoft.com/thank-you-downloading-visual-studio-mac/?sku=communitymac&rel=16</a></li></ul><p>&nbsp;</p><p><strong><span>Please note :</span></strong><span> </span>
+<span>This module has been designed using Visual Studio installed on the </span><strong><em><span>Windows operating system</span></em></strong><span>. Therefore, if you are using a Mac the user interface will look slightly different. But the core features and steps defined are very similar. If you have any questions please ask.</span></p><p><span>   </span></p><h4><a name="about---c-and-net-framework" class="md-header-anchor"></a><span>About :  C# and .NET Framework</span></h4><p><span>C# (pronounced </span><em><span>C-Sharp</span></em><span>, like the musical note) is a general purpose, multi paradigm programming langauge developed by Microsoft that runs on the .NET Framework. C# is used to develop web apps, desktop apps, mobile apps, games and much more. For those who are curious, more information can be found  </span><a href='https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework' target='_blank' class='url'>https://docs.microsoft.com/en-us/dotnet/csharp/getting-started/introduction-to-the-csharp-language-and-the-net-framework</a></p><p>&nbsp;</p><hr /><h3><a name="lab-activity" class="md-header-anchor"></a><span>Lab Activity</span></h3><p><strong><span>Before you continue :</span></strong><span> make sure you have access to Visual Studio. As you are about to begin on your UCLAN programming adventure. </span></p><p>&nbsp;</p><h4><a name="1-creating-your-first-new-project" class="md-header-anchor"></a><span>1. Creating your first &quot;New Project&quot;</span></h4><p><span>When you first start Visual Studio, you may be asked what settings you wish to use. Select </span><strong><span>Visual C# Development Settings</span></strong><span>. This should only happen the first time you run it.</span></p><p><span>You begin on the </span><strong><span>Start Page</span></strong><span>, which links to various online resources and allows you to open or create projects. We want to </span><strong><em><span>create a new project</span></em></strong><span>. Almost all your projects in this module are created this way so get familiar with these steps. As a mistake here can result in getting unusual errors later on, so be careful.</span></p><p><span>To create a new project we:</span><span>	</span></p><ol><li><span>On the </span><strong><span>Start Page</span></strong><span> choose </span><code>Create new project…</code><span> . Alternatively, in the main menu choose </span><code>File &gt; New &gt;  Project…</code><span>.</span></li><li><span>From the left choose </span><code>Installed &gt; Visual C#</code><span>, then from the list on the right choose </span><code>Console App (.NET framework)</code><span>.</span></li><li><span>Towards the bottom of the window, give a name to your project. Call this project </span><strong><span>TestApp</span></strong><span>. Also browse to a suitable location – I suggest you make a new folder </span><strong><span>CO1404 Introduction to programming</span></strong><span> amongst your documents just for this module. It is inside of that folder I would reccommend you save all your projects associated with this module.</span></li><li><span>Finally, make sure the option </span><code>Create directory for solution</code><span> is </span><strong><span>unchecked</span></strong><span>. The remaining settings should be fine, so now press OK.</span></li></ol><p>&nbsp;</p><p><span>If you have followed the steps above correctly, after a moment or so some program code will appear. This is </span><em><span>shell code</span></em><span>: some lines that all your programs will need  - so they are created automatically. We will look at them in a moment.</span></p><p>&nbsp;</p><h4><a name="2-lets-explore-visual-studio-ide" class="md-header-anchor"></a><span>2. Let&#39;s explore Visual Studio IDE</span></h4><p><span>Once you have created your project Visual Studio should look something similar to the image below (don&#39;t worry if it doesn&#39;t look exactly like this as view varies depending on the version or setup). For this module the main aspects of the user interface have been highlighted. They are </span><strong><span>Code Editor, Solution Explorer</span></strong><span>,  and </span><strong><span>Toolbar Commands</span></strong><span>.</span></p><p>&nbsp;</p><p><img src="https://raw.githubusercontent.com/CO1404-Introduction-to-Programming/CO1404-Semester-1/master/Images/VS-guide.png" alt="Visual Studio User Interface" style="zoom:100%;" /></p><p>&nbsp;</p><h5><a name="code-editor" class="md-header-anchor"></a><span>Code Editor</span></h5><p><span>This is the main area. The code editor is a fairly standard text editor for writing/editing your code. You will notice that some of the words are coloured. This feature is known as </span><strong><span>Syntax Highlighting</span></strong><span>. It identifies different types of programming keywords. You will find this becomes more useful as your program abiliites improve and you gain more experience.</span>
+</p><h5><a name="solution-explorer" class="md-header-anchor"></a><span>Solution Explorer </span></h5><p><span>The solution explorer contains all the files and references used by your project.</span></p><ul><li><span>In your early programs you will have only one file of interest, called </span><code>Program.cs</code><span> by default. This is the file open in the text editor. You can rename it if you wish, and in later programs you might want to create multiple files to help structure your programs.</span></li><li><span>The files are collected into a </span><code>project</code><span>, which you called </span><code>TestApp</code><span>. This is in turn collected into a </span><code>solution</code><span> also called TestApp. This higher level structure is only important for larger programs.</span></li></ul><p>&nbsp;</p><h5><a name="toolbar-commands" class="md-header-anchor"></a><span>Toolbar Commands</span></h5><p><span>The icons highlighted should already look familair to you:</span></p><ul><li><strong><span>Save Icon</span></strong><span>: saves any changes you have made to your project.</span></li><li><strong><span>Run Icon</span></strong><span> : Will run your program. </span></li></ul><p><strong><span>Note:</span></strong><span> You will to use other features from the toolbar in the future.</span></p><p>&nbsp;</p><h5><a name="miscellaneous-information" class="md-header-anchor"></a><span>Miscellaneous Information</span></h5><p><span>Listed in the bullet points below are some miscellaneous bits of information that you may or may not need depedning on how Visual Studio presents it self to you.</span></p><ul><li><span>On some installations you will also see the </span><strong><span>Properties pane</span></strong><span> (but you may not, it depends on your setup). For this module, this pane is not needed until you cover Visual Programming later in your course. So you can close this pane if you wish. Get it back from the View menu.</span></li></ul><ul><li><p><span>You might notice text near the braces that says </span><strong><span>0 references</span></strong><span>. This is an advanced feature that we don’t want. Right-click on the that text, choose </span><strong><span>Codelens Options...</span></strong><span>”, then uncheck </span><strong><span>Enable Codelens</span></strong><span>.</span></p></li><li><p><span>You can change the </span><strong><span>theme</span></strong><span> of visual studio for those who prefer </span><strong><span>Dark Mode</span></strong></p><ul><li><p><span>Go to </span><strong><span>Tools &gt; Options</span></strong></p></li><li><p><span>On the left you will see </span><strong><span>Environment</span></strong><span> press that and click </span><strong><span>General</span></strong></p></li><li><p><span>You will see a group of options called </span><strong><span>Visual Experience</span></strong><span>. You will find a drop down menu with various options, choose your option and press </span><strong><span>OK</span></strong></p><p>&nbsp;</p></li></ul></li></ul><h4><a name="3-lets-understand-the-shell-code" class="md-header-anchor"></a><span>3. Let&#39;s understand the Shell Code</span></h4><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="C#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation" style=""><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">using</span> <span class="cm-variable">System</span>;</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-keyword">namespace</span> <span class="cm-def">Test</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">{</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp;<span class="cm-keyword">class</span> <span class="cm-def">MainClass</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-keyword">public</span> <span class="cm-keyword">static</span> <span class="cm-keyword">void</span> <span class="cm-variable">Main</span>(<span class="cm-variable-3">string</span>[] <span class="cm-variable">args</span>)</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  {</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<span class="cm-comment">//Your code goes here !</span></span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp; &nbsp; &nbsp;  }</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"> &nbsp;  }</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">}</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 264px;"></div><div class="CodeMirror-gutters" style="display: none; height: 264px;"></div></div></div></pre><p><span>Above is an example of what the </span><strong><span>shell code</span></strong><span> looks like. We will rarely change the shell code in this module, but here’s the same quick overview from the lecture:</span></p><ul><li><span>The </span><code>using</code><span> statements indicate what parts of the pre-written C# library code our program will use. If we want special features (e.g. file features, network features) then we add more using lines here</span></li></ul><ul><li><span>The </span><code>namespace</code><span> line, which has the name of your project, ensures your project is kept separate from other projects and system code</span></li></ul><ul><li><p><span>Notice the </span><strong><span>curly brackets</span></strong><span> or </span><strong><span>braces</span></strong><span> – the symbols </span><code>{</code><span> and </span><code>}</code><span>. They keep the code into </span><em><span>blocks</span></em><span>, which we will see the importance of later. The braces are joined with a dotted line so you can see where each one starts and ends.</span></p><ul><li><span>In Visual Studio, you can press the little </span><code>+</code><span> and </span><code>–</code><span> signs at the left to expand or compact these blocks to help readability in a larger program.</span></li></ul></li></ul><ul><li><span>The </span><code>class Program</code><span> and the line marked </span><code>Main</code><span> are the part that will contain your code in your early programming.</span></li></ul><ul><li><span>Finally, your code goes inside the innermost braces </span><code>{</code><span> </span><code>}</code><span>. So make a new blank line in-between them and let’s start programming.</span></li></ul><p>&nbsp;</p><h4><a name="4-writing-your-first-program---hello-world" class="md-header-anchor"></a><span>4. Writing your first program - &quot;Hello World&quot;</span></h4><p><span>At this point we have familiarised ourselves with the IDE and we understand the main components of the shell code. When typing code it is good practice to use the tab key to indent the code one time more than the braces surrounding it. This will help make your code more readable. If you need, please ask your tutor to show you what this means. </span></p><p><span>Now it is time to create our very first program, follow the instructions below: </span></p><ol><li><p><span>Between the innermost braces, type the following statement:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Console</span>.<span class="cm-variable">WriteLine</span>(<span class="cm-string">"Hello World"</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><strong><span>Note:</span></strong></p><ul><li><strong><span>C#</span></strong><span> is </span><strong><em><span>case sensitive</span></em></strong><span>. That means capital letters are considered different to lower case letters. When copying program code copy the capitals exactly. When writing your own program code you must use capitals consistently (e.g. &quot;Console&quot; is different to &quot;console&quot;)</span></li></ul><ul><li><p><span>Also notice the semi-colon </span><code>;</code><span> at the end of the line. Semi-colons are required to separate </span><em><span>statements</span></em><span>, although they are not needed in all cases, e.g. they&#39;re not needed after braces </span><code>{</code><span> </span><code>}</code><span>. You will probably forget these a few times at first, don&#39;t worry - you&#39;ll get used to them soon.</span></p><p>&nbsp;</p></li></ul></li><li><p><span>Compile and run your program by pressing the </span><strong><span>Play button</span></strong><span> in the toolbar.</span>
+<span> </span></p></li><li><p><span>Wait a minute what happend? Nothing or did something flicker? Why? Well the program you have written simply just writes a line of text to the console. Once your program has finished displaying the text is exits. To see our hardwork, we need to add a line to pause while we look at the program result. Add the following statement underneath the statement you added previously.</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Console</span>.<span class="cm-variable">Readline</span>();</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><span>This will cause your program to pause whilst it waits for the user to enter something, you will need something similar in many of your programs.</span></p><p>&nbsp;</p></li><li><p><span>Now run it again. This time it should display the text and then wait for you to input something into the console window. </span></p><p>&nbsp;</p></li></ol><hr /><p>&nbsp;</p><p><span>This program works by using pre-written </span><strong><span>methods</span></strong><span> (ReadLine and WriteLine) from the C# </span><strong><span>Console library</span></strong><span>.</span></p><ul><li><span>The </span><strong><span>console</span></strong><span> is a window (usually with white text on a black background) that allows a very direct interface between program and the computer.</span></li></ul><ul><li><span>Although console programming is rather limited it is a great way to get familiar with core programming concepts without other features getting in the way. So we will only create console programs in this module, in later modules you will create a wider range of programs.</span></li><li><span>We will often methods from the pre-written libraries provided with the C# language to simplify the code we have to write.</span></li></ul><p>&nbsp;</p><h4><a name="5-different-ways-to-run-your-program" class="md-header-anchor"></a><span>5. Different Ways to Run your program</span></h4><p><span>There are several different ways of running your program inside of Visual Studio. But this is only useful to programmers.  What if we wanted to share this with other users?</span></p><ol><li><p><span>In your operating systems file browser, (Explorer in Windows  or Finder in MacOS), navigate to the folder where you saved the project, then look in the folder </span><code>bin</code><span> and then </span><code>debug</code><span>. You should find a file of type </span><strong><span>Application</span></strong><span>” with the name of your project (hover over the file to find if it’s an application or not).  It is this file you can share with others.</span></p><p>&nbsp;</p><ul><li><p><span>This particular version of the application is know as a </span><strong><span>Debug build</span></strong><span>. The program has been compiled to help us debug it in case there are problems. That means it will be a little larger and potentially slower than normal. This makes very little difference to our simple programs and we will often need to debug. But you can create a </span><em><span>release build</span></em><span> using the drop-down list near the top of Visual Studio. However, use debug builds most of the time.</span></p><p>&nbsp;</p></li></ul></li><li><p><span>Sometimes we do not need to program to completely finish all its operations. We can stop the program at any time. If you run the application by clicking the </span><strong><span>Play</span></strong><span> button in Visual Studio you should be able to see a </span><strong><span>Stop</span></strong><span> button, press it and the applicaiton will terminate the program early. This is especially useful if things get stuck! </span>
+</p></li></ol><p><strong><span>Tips: </span></strong></p><ul><li><span>In </span><strong><span>Microsoft Windows</span></strong><span> you can double click the application to run it like any other program.</span></li><li><strong><span>Quick Bonus</span></strong><span> - To change the icon for the application: select the project in the Solution Explorer, right click, Properties, change icon at bottom of “Application” tab (use the .ico file provided with this week’s material on the module webpage). Changing the icons only affects the executable when you run it from Windows, not when running from within Visual Studio. Try it now, it will change what you see in the task bar and in the top left of the console window.</span></li></ul><p>&nbsp;</p><h4><a name="6-errors-and-documentation" class="md-header-anchor"></a><span>6. Errors and Documentation</span></h4><p><span>One advantage of using a IDE like Visual Studio is the error detection features it provides us. Lets explore a few of these features now. </span></p><p>&nbsp;</p><p><strong><span>Error Detection</span></strong></p><ol><li><p><span>In the code editior type a </span><code>%</code><span>  somewhere in the space after </span><code>Console.ReadLine();</code><span>. Note the red squiggle that appears after a moment, like a spelling mistake. This is a </span><strong><em><span>syntax error</span></em></strong><span>: you’re not allowed to type a </span><code>%</code><span> there in C#.</span></p><p><span>If you hover over the squiggle to show an error message. Note that this error confused Visual Studio into producing multiple error messages, of course the other errors are caused by the first error. This is not uncommon.</span></p><p>&nbsp;</p></li><li><p><span>Try to run the program with the error still in it, you are asked whether you want to run the previous version. This is rarely useful, so check “Do not show this dialog again”, the press </span><strong><span>No</span></strong><span>. Also notice an </span><strong><span>Error List</span></strong><span> pane appears.</span></p><p>&nbsp;</p></li><li><p><span>Remove the </span><code>%</code><span>  and try deleting one of the semi-colons</span><code>;</code><span> to prove that they are necessary.</span></p><p><span>Hovering over the missing semi-colon error can be difficult, so find its error in the </span><strong><span>Error List</span></strong><span> (if the Error List is not there, go to the menus and choose </span><strong><span>View &gt; Error List</span></strong><span>). Double click any error in the Error List and it will take you directly to the error in Visual Studio. Fix any errors before moving on.</span></p><p>&nbsp;</p></li></ol><p><strong><span>Access Documentation</span></strong></p><ol><li><p><span>Hover over </span><code>ReadLine</code><span>, </span><code>WriteLine</code><span> or </span><code>Console</code><span> for quick documentation.</span></p><p><span>In windows you can click on ReadLine and press F1 for full documentation. (note: recently you might need to create a Microsoft account to do this). Note that the documentation is written for experienced programmers and is too complex for novices so don’t worry about understanding it right now. However, it can sometimes be a good source for example code. You can also select errors in the Error List and press F1 for more info</span></p></li></ol><p>&nbsp;</p><h4><a name="7-now-lets-create-another-program" class="md-header-anchor"></a><span>7. Now let&#39;s create another Program</span></h4><p><span>Save your project (find Save All in the tool bars). Then create a new project from scratch and call it </span><strong><span>NameEntry</span></strong><span>. </span>
+</p><ol><li><p><span>Using your knowledge from the previous program, make this new program display your name on the screen. Remember to add a </span><code>Console.ReadLine();</code><span> statement so the program waits for you to press return before returning to Visual Studio.</span>
+</p></li><li><p><span>Next we write some code that will ask the user to type their name then display it. We use the </span><code>ReadLine()</code><span> method again – this method waits for the user to type something. Before we ignored what the user typed. In the first program, we ignored what the user typed. This time we will store what they type in a </span><code>string</code><span> variable. </span></p><p><span>Two new concepts here, which we will see in more detail later:</span></p><ul><li><span>Think of a </span><strong><em><span>variable</span></em></strong><span> as a box with a name on it that holds some information we need in the program, in this case the name typed by the user.</span></li><li><span> A </span><code>string</code><span> is a sequence of characters (</span><code>char</code><span>), which can be letters, numbers or punctuation. Just what we need to hold what the user might type.</span></li></ul><p>&nbsp;</p><p><span>To do this ,we have to </span><strong><span>declare</span></strong><span> a variable. We do this by stating what type of variable is it and provide give it a name. The code below is how we declare variable with a type of </span><code>string</code><span> called </span><code>username</code><span>:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">string</span> <span class="cm-variable">username</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><span>Put this declaration at the start of your program (i.e. inside the braces </span><code>{</code><span> </span><code>}</code><span> of </span><code>Main</code><span>, but before the Write/ReadLines statements that you have written).</span>
+</p></li><li><p><span>Now on a new line add the following statement after the delcaration you made in the previous step.</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">username</span> <span class="cm-operator">=</span> <span class="cm-variable">Console</span>.<span class="cm-variable">Readline</span>();</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><span>This will now assign the variable </span><code>username</code><span> with the text inputted by the user as a result of the </span><code>Console.Readline()</code><span> method.</span>
+</p></li><li><p><span>Now update the </span><code>Console.WriteLine(&quot;Hello World&quot;);</code><span> statement to output the </span><code>username</code><span> variable instead. When you get it right you should be able to type your name (or anything) and the program will repeat it back at you.</span></p><p><strong><span>Tip : </span></strong><span> you don’t put quotes around variable names.</span></p></li></ol><p>&nbsp;</p><h4><a name="8-tweaks-and-changes" class="md-header-anchor"></a><span>8. Tweaks and Changes</span></h4><p><span>Now let&#39;s make some improvements to the user interface.</span></p><ol><li><p><span>Use some more </span><code>WriteLine</code><span> statements to make the program display </span><code>&quot;Enter your Name&quot;</code><span> before it requests the user to input text into the console. Also display the text </span><code>&quot;Hello&quot;</code><span> before displaying the user&#39;s name.</span></p><p>&nbsp;</p></li><li><p><span>The </span><code>WriteLine</code><span> method always moves to a new line. There is also another method </span><code>Write</code><span> that doees not. Using this information update your program using </span><code>Write</code><span> and </span><code>WriteLine</code><span> methods so that the console output looks like the example below:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang=""><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Enter your name : [User inputs their name]</span></pre></div><div class="" style="position: relative;"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">Hello, [user's name appears here] </span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p><span> </span><strong><span>Note:</span></strong><span> the squared brackets represent input from the user.</span></p></li><li><p><span>We can write out text and variables together. Examine the following statement:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">Console</span>.<span class="cm-variable">WriteLine</span>(<span class="cm-string">"Your name is: {0}"</span>, <span class="cm-variable">username</span>);</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p><span>This statement will replace the </span><code>{0}</code><span> with the values of the </span><code>username</code><span> variable. This saves us having to write two statements to achieve this. You can also use </span><code>{1}</code><span>, </span><code>{2}</code><span> etc. and add even more variables. However,  there is no similar thing for the </span><code>ReadLine</code><span> method.</span>
+</p><p><span>Now update your program to have the user to input their </span><strong><span>first</span></strong><span> and </span><strong><span>second</span></strong><span> name separately. You will need two </span><code>string</code><span> variables. Use the statement above  to write the names out in reverse order. It should look like the example below.</span></p><pre lang="" class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang=""><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre>x</pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;">You are Campbell, Daniel</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p>&nbsp;</p></li><li><p><span>Finally, output the names in upper case using </span><code>&lt;variableName&gt;.ToUpper()</code><span>Replacing </span><code>&lt;variableName&gt;</code><span> with those you have chosen to represent the user&#39;s first and second name. There are many supporting </span><strong><span>methods</span></strong><span> like this in C#. Too many to go through in this module, but a few convenient ones will be introduced as we progress</span></p><p>&nbsp;</p></li><li><p><span>Save your work!</span></p></li></ol><p>&nbsp;</p><h4><a name="9-working-with-numbers" class="md-header-anchor"></a><span>9. Working with Numbers</span></h4><p><span>Create another new project, this time call is </span><strong><span>SimpleOperators</span></strong><span>. Now in the last project we used </span><code>string</code><span> variables to hold text. Here we are going to become famialir with our first numerical variable the </span><strong><span>Integer</span></strong><span>. </span></p><ol><li><p><span>In C# we use the keyword </span><code>int</code><span> to declare an integer variable. In your new project&#39;s </span><code>Main</code><span> method declare an integer variable called </span><code>userHeight</code><span> , as shown below:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-variable">userHeight</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><p>&nbsp;</p></li><li><p><span>In this program we’re going to ask the user for their own height (just a number, let’s assume it’s in cm) and the heights of their two neighbours. To input a number from the user in C# we have them input a string and then we convert that string to a number. Add the following code to your program to do that:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">string</span> <span class="cm-variable">heightString</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">heightString</span> <span class="cm-operator">=</span> <span class="cm-variable">Console</span>.<span class="cm-variable">ReadLine</span>();</span></pre><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">userHeight</span> <span class="cm-operator">=</span> <span class="cm-variable-3">int</span>.<span class="cm-variable">Parse</span>(<span class="cm-variable">heightString</span>);</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 66px;"></div><div class="CodeMirror-gutters" style="display: none; height: 66px;"></div></div></div></pre><p>&nbsp;</p><p><strong><span>So why can&#39;t we just use the number how it is typed in by the user?</span></strong><span> Well, most programming languages don’t see strings as numbers, even if that’s what they contain. A </span><code>string</code><span> is a sequence of </span><strong><span>characters</span></strong><span>. A character is a letter, digit or punctuation mark. Interpreting the meaning of a sequence of characters is called </span><strong><span>parsing</span></strong><span>. So we use a C# library </span><code>Parse</code><span> method to interpret our string as a number – this method will read the digits one at a time and form the number. It will also spot problems, for example if we type letters instead of numbers. </span></p><p>&nbsp;</p></li><li><p><span>Now complete the input part of the program: you already have the code to input your own height. Add some code to write some text to the screen first so the user knows what they are doing, e.g. </span><code>“Please enter your height in cm: “</code><span>.</span>
+</p></li><li><p><span>Add further code, to ask for and input heights for your two neighbours. This code will clearly be very similar to the code you already have. But you will need more variables for these new heights. </span></p><p>&nbsp;</p></li></ol><hr /><p><span>Now time for some fun. Let&#39;s perform some calculations. Imagine a different program with two integers </span><code>A</code><span> and </span><code>B</code><span>. I want to put their </span><strong><span>sum</span></strong><span> (</span><code>+</code><span>) in another integer </span><code>c</code><span>. This is how to do it:</span></p><pre lang="c#" class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">int</span> <span class="cm-variable">c</span>;</span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span> <span class="cm-operator">+</span> <span class="cm-variable">b</span>;</span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p><span>We can do other basic arithmetic, just note for division you use </span><code>/</code><span> and for multiplication you use</span><code>*</code><span>. You can combine operations and use  brackets </span><code>(</code><span> </span><code>)</code><span> too:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable">c</span> <span class="cm-operator">=</span> <span class="cm-variable">a</span> <span class="cm-operator">+</span> (<span class="cm-variable">b</span> <span class="cm-operator">*</span> <span class="cm-variable">b</span>)</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre><hr /><p>&nbsp;</p><p><span>Now let&#39;s get back to reality. In your program you should have three heights. Now we want  you to calculate the MEAN  (aka - average) of the three values.</span></p><p>&nbsp;</p><ol><li><p><span>Delcare a new integer  called </span><code>averageHeight</code><span>.</span></p><p>&nbsp;</p></li><li><p><span>Now use arithmetic to calcualte the MEAN of your three height variables and assign the result to the </span><code>averageHeight</code><span> variable you declared in the previous step.</span></p><p><strong><span>Note:</span></strong><span> To calculate the MEAN you the work out the sum total of the three heights and divide by 3.\</span></p><p>&nbsp;</p></li><li><p><span>Finally display the average height with a suitable message.</span>
+</p></li><li><p><span>Update your program to output the average height in inches. To convert cm to inches, divide by 2.54. </span></p><ul><li><p><span>Depending how you do this you may get an error. The problem is that the height in inches is no longer an integer, as it has a decimal point (e.g 72.4 inches). This is called a </span><strong><span>*floating point</span><span>*</span></strong><span> number.</span></p></li><li><p><span>You can make a variable for a floating point number using the </span><code>double</code><span> type instead of </span><code>int</code><span>. Use a variable like this to help solve any errors:</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-variable-3">double</span> <span class="cm-variable">heightInches</span>;</span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 22px;"></div><div class="CodeMirror-gutters" style="display: none; height: 22px;"></div></div></div></pre></li></ul><p>&nbsp;</p></li><li><p><span>Your floating point output will probably have too many decimal places and be unpleasant to read, e.g. you might get a result like </span><code>48.1234812542735 inches</code><span>. You can solve this by using </span><code>{0:F2}</code><span> instead of </span><code>{0}</code><span> in your </span><code>WriteLine</code><span> method. This will display a fixed 2 decimal places only, e.g. </span><code>48.12</code><span>. There are other formatting possibilities, which we will discover in later weeks.</span></p></li><li><p><span>Finally, update your program again to output the average height in feet and inches, e.g. 70 inches is 5 feet 10 inches. Format the output message nicely.</span></p><ul><li><p><strong><span>Tip:</span></strong><span> Must calculate a remainder for this: use the </span><code>%</code><span> sign like the </span><code>/</code><span> sign. For example;</span></p><pre spellcheck="false" class="md-fences md-end-block ty-contain-cm modeLoaded" lang="c#"><div class="CodeMirror cm-s-inner CodeMirror-wrap" lang="c#"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 8px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">70</span> <span class="cm-operator">/</span> <span class="cm-number">12</span> <span class="cm-operator">=</span> <span class="cm-number">5</span> &nbsp;<span class="cm-comment">// feet</span></span></pre></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-number">70</span> <span class="cm-operator">%</span> <span class="cm-number">12</span> <span class="cm-operator">=</span> <span class="cm-number">10</span> <span class="cm-comment">// inches (as this is the remainder i.e (70 = 5x12 + 10))</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom-width: 0px; border-bottom-style: solid; border-bottom-color: transparent; top: 44px;"></div><div class="CodeMirror-gutters" style="display: none; height: 44px;"></div></div></div></pre><p><span> This needs some initiative, but ask your tutor if you need help. </span></p></li><li><p><strong><span>Note:</span></strong><span> You can use integer or floating point values, it&#39;s up to you</span></p></li></ul></li></ol><p>&nbsp;</p><hr /><p><strong><span>*Disclaimer </span></strong><span>: </span><em><span>The following &quot;Advanced Challenges&quot; are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don&#39;t stress about them.</span></em></p><hr /><p>&nbsp;</p><h4><a name="10-advanced-challenges" class="md-header-anchor"></a><span>10. Advanced Challenges</span></h4><p><span>Fancy a challenge? Then you are at the right place. </span></p><p><strong><span>Advanced Challenge 1:</span></strong><span>  </span></p><p><span>In the final project </span><strong><span>SimpleOperators</span></strong><span> it is possible to reduce the number of variables needed in this program. A sensible solution will use only one string variable. However, can you go further and simplify the code to use no string variables at all?</span></p><p><strong><span>Advanced Challenge 2:</span></strong></p><p><span>Update your program so the user inputs the heights in feet and inches and displays the average in feet and inches. Ask the user separately for feet and inches, but then convert to inches only to do the averaging correctly, then convert back for output.</span></p></div>
+</body>
+</html>
