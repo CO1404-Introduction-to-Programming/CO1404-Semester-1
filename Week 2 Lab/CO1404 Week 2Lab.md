@@ -16,7 +16,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 #### **Objectives**
 
-This Lab aims to achive the following objective(s) below:
+This Lab aims to achieve the following objective(s) below:
 			
 **PO.1**:  Introduce the development environment and programming language you will be using for this 			module.
 
@@ -255,7 +255,7 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 
 
-**If you have completed all three elements, you have sucessfully completed stage one**
+**If you have completed all three elements, you have successfully completed stage one**
 
 
 
