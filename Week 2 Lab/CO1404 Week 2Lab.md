@@ -1,0 +1,211 @@
+# CO1404 : Introduction to Programming 
+
+**Week 2 – Variables, Operators and Conditions**
+
+------
+
+
+
+### Lab Summary
+
+This lab worksheet helps you write your first programs. Students who have experience programming should find it straightforward at first. However, there will be advanced questions later on. There's a lot of reading in this worksheet as we introduce the tools required. Later worksheets will tend to be shorter, with more work for you to do!
+
+**Remember:** If you have any questions or require assistance, please get your tutors attention. We are all here to help!
+
+
+
+#### **Objectives**
+
+This Lab aims to achive the following objective(s) below:
+			
+**PO.1**:  Introduce the development environment and programming language you will be using for this 			module.
+
+
+
+
+
+------
+
+### Lab Activity
+
+This weeks lab activity begins with three precursor tasks (Variable Declarations, Variables and Operators and if statements). These will help you complete stages 1 and 2 marked in the lab sheet. **Stage 1** is the ***absolute minimum*** point you should reach. Hopefully you can reach it in the lab session, if not use the drop-in help sessions and your own time to catch up. Reaching stage 2 suggests you are on target for a top class mark for the module. Set your goals sensibly - don't just aim for the minimum or you may struggle to pass the module.
+
+
+**Disclaimer **: *The "Advanced Challenges" are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don't stress about them.*
+
+------
+
+
+
+#### **Variables Declarations**
+
+ For each of the following variable declarations, decide if it is: 
+
+- **Good**: *A valid declaration with a readable variable name (see lecture)*.
+
+- **Poor**: *A valid declaration, but a poor choice of variable name*
+
+- **Invalid**: *The declaration has an error - it will not compile*
+
+
+
+```C#
+int numberStudents;
+int totalCash = 210.50;
+double num = 45.5;
+string myID = "G1423";
+string myName = "Bob"
+int 1stPlaceScore;
+float wall_length;
+float wall height;
+double pi = 3.14159;
+Float AccountBalance;
+char firstLetter = 'A';
+char secondLetter = "B";
+```
+
+
+
+Write your answers in a document, paper, or into the worksheet and save it later for reference. It will help you during your revision. Check and explain your answers with the tutor.
+
+
+
+#### **Variables and Operators**
+
+1. Create a new Visual Studio C# Console project called **CalculateTax**. Refer to last week's worksheet if you have forgotten how to create a new project.
+   
+
+2. Copy the code below into the correct place in the shell code. Again, refer to last week's lecture / lab or ask the tutor if you are not sure where to put the code:
+
+   ```C#
+   double itemPrice;
+   string inputString
+   
+   Console.Write("Enter the item price: ");
+   inputString = Console.ReadLine();
+   itemPrice = double.Parse(inputString);
+   
+   double itemTax = 8.5;
+   int totalPrice = itemPrice + itemTax;
+   
+   Console.WriteLine("Tax on the item is {0}", itemTax);
+   Console.WriteLine("Total item price is {0}", totalprice);
+   
+   Console.ReadLine();
+   
+   ```
+
+3. Now you maybe wondering, "The code you told me to copy has errors". Unfortunately, it does. Sorry about that. Fix the errors so that the program will run.
+    
+
+4. The program adds a fixed amount of tax to the price, which isn't very realistic. Update the value of `itemTax` to be `20%` of `itemPrice`. This involves a calculation using addition and division. Try to do this on your own, but if you get stuck there's an example in the lecture.
+
+   
+
+5. After displaying the total value with tax, add some extra code to the program to ask the user `"How many items do you want to buy?"`. Read an integer from the user for their answer, then calculate the `total cost` (`totalPrice * number of items`). Output a final message in this style:
+
+   ```
+   The price for 4 items is 57.60
+   ```
+
+   
+
+6. Add some sensible comments to your code. To comment your code you use `// <some comment>`. For example:
+
+   ```c#
+   double reactorCoreTemp;
+   
+   if (reactorCoreTemp > 20.5)
+   {
+   	Warning.redAlert("We have a big problem"); // Sounds the alarm.
+   }
+   else
+   {
+   	Console.Writeline("Reactor Core is operating at {0}", reactorCoreTemp);
+   }
+   ```
+
+
+   If you are unsure  about your comments, please check them with your tutor. 
+
+
+
+#### An `if` Statement
+
+1. Create a new Visual Studio C# Console project called **BirthYear** and copy the code below into the correct place in the shell code:
+
+   ```c#
+   int year;
+   string inputString;
+   
+   Console.Write("Enter your year you were born: ");
+   inputString = Console.ReadLine();
+   year = int.Parse(inputString);
+   
+   if (year % 4 == 0);
+   {
+     Console.WriteLine("You were born in a leap year");
+   }
+   
+   Console.ReadLine();
+   ```
+
+   
+
+2. Look carefully for the single warning that Visual Studio highlights. This mistake was highlighted in the lecture. Fix this simple bug (if you don't fix it then the program will run, but it will say every year is a leap year - try running it first it if you wish).
+
+   
+
+3. Run the program and it will tell you whether your birth year was a leap year. It works by seeing if there is a 0 remainder after dividing the year by 4, which is the same as saying that the year divides by 4 exactly - the main rule for leap years (actually there are other rules for leap years but they don't affect any recent years).
+   
+
+4. Add an `else` statement to display the message `"You were not born in a leap year"` appropriately. Check the lecture notes to see where to put an else statement (alternatively, have another look at the Reactor Core example in the previous section) . Be precise and try to line things up in the same way as the lecture.
+
+   
+
+5. Add another `if-else` statement that checks if the user was born in the same year as yourself. It should display `You were born in the same year as me!` or `You weren't born in the same year as me`.
+
+
+
+##### **Advanced Challenge **
+
+Can you work out how to update your code to say one of `You're older than me`, `You're younger than me` or `You're the same age as me`?
+
+
+
+------
+
+#### STAGE 1
+
+------
+
+This stage consists of three eleements: ***A Common Error: Integer divided by Integer***, ***Currency Conversion***, ***Maximum Number***.
+
+
+
+##### A Common Error: Integer divided by Integer
+
+1. Create a new Visual Studio C# Console project called **IntegerDivision**.
+
+   
+
+2. Copy the code below into the correct place in the shell code:
+
+   ```c#
+   double half = 1/2;
+   Console.Write("One half (1/2) = {0}", half);
+   Console.ReadLine();
+   ```
+
+
+   
+
+3. Run the program. That's strange... it says `1/2 = 0`
+
+ 
+
+Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
+
+On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
+
+![img](file:////Users/dan/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg) On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
