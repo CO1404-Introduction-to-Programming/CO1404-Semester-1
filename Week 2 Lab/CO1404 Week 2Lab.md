@@ -2,8 +2,6 @@
 
 **Week 2 – Variables, Operators and Conditions**
 
-------
-
 
 
 ### Lab Summary
@@ -18,7 +16,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 This Lab aims to achieve the following objective(s) below:
 			
-**PO.1**:  Introduce the development environment and programming language you will be using for this 			module.
+**PO.1**:  Introduce the development environment and programming language you will be using for this module.
 
 
 
@@ -73,6 +71,7 @@ Write your answers in a document, paper, or into the worksheet and save it later
 1. Create a new Visual Studio C# Console project called **CalculateTax**. Refer to last week's worksheet if you have forgotten how to create a new project.
    
 
+   
 2. Copy the code below into the correct place in the shell code. Again, refer to last week's lecture / lab or ask the tutor if you are not sure where to put the code:
 
    ```C#
@@ -94,7 +93,8 @@ Write your answers in a document, paper, or into the worksheet and save it later
    ```
 
 3. Now you maybe wondering, "The code you told me to copy has errors". Unfortunately, it does. Sorry about that. Fix the errors so that the program will run.
-    
+
+   
 
 4. The program adds a fixed amount of tax to the price, which isn't very realistic. Update the value of `itemTax` to be `20%` of `itemPrice`. This involves a calculation using addition and division. Try to do this on your own, but if you get stuck there's an example in the lecture.
 
@@ -156,7 +156,6 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 3. Run the program and it will tell you whether your birth year was a leap year. It works by seeing if there is a 0 remainder after dividing the year by 4, which is the same as saying that the year divides by 4 exactly - the main rule for leap years (actually there are other rules for leap years but they don't affect any recent years).
    
-
 4. Add an `else` statement to display the message `"You were not born in a leap year"` appropriately. Check the lecture notes to see where to put an else statement (alternatively, have another look at the Reactor Core example in the previous section) . Be precise and try to line things up in the same way as the lecture.
 
    
@@ -181,7 +180,7 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 
 
-##### A Common Error: Integer divided by Integer
+##### 1. A Common Error: Integer divided by Integer
 
 1. Create a new Visual Studio C# Console project called **IntegerDivision**.
 
@@ -196,14 +195,16 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
    ```
 
 
-   
+
 
 3. Run the program. That's strange... it says `1/2 = 0` . 
 
    
 
    Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
+
    
+
 
    ![img](https://raw.githubusercontent.com/CO1404-Introduction-to-Programming/CO1404-Semester-1/master/Images/mag_glass.png): On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
 
@@ -211,6 +212,7 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 4. Fix the problem by writing `1.0` and ` 2.0` instead. This shows that they are **floating point values** and indicates to C# that you want a floating point answer. The program will run correctly now.
 
+   
 
    This issue can often catch you out and cause unexpected bugs. It usually happens when you are programming a formula. Here's a standard question for novice programmers where you must be careful about this problem:
 
@@ -226,7 +228,7 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 
 
-##### **Currency Conversion**
+##### **2. Currency Conversion**
 
 1. Create a new Visual Studio C# Console project called **CurrencyConverter**.
 
@@ -242,14 +244,13 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 4. Extend the program further by first prompting the user `"Type 1 to convert from £ to $, or type 2 to convert from $ to £`. Then read the user's choice (as an integer). Use an `if-else` statement that tests if this integer is equal to 1 as its condition. In the first block of the if statement, put the code to convert from £ to $, and in the second block (`else`) add code to convert the other way, from $ to £. The code to convert the other way is almost the same.
 
+**Advanced Challenge**
 
-   **Advanced Challenge**
-
-   Clearly there is a lot of similar code between the if and else blocks here. Try to reduce the amount of duplicate code to the minimum. You can get it down to only one line in each block of the 'if-else' statement, although it will need some thought.
-
+Clearly there is a lot of similar code between the if and else blocks here. Try to reduce the amount of duplicate code to the minimum. You can get it down to only one line in each block of the 'if-else' statement, although it will need some thought.
 
 
-**Maximum Number**
+
+**3. Maximum Number**
 
 1. Write a program that asks the user to input five different integers. Using `if` statements work out which is the maximum of the five numbers and display it. You will need several `if` statements to do this exercise. Ask your tutor for advice if necessary.
 
@@ -269,7 +270,7 @@ This stage consists of a single element: ***Sorting***. This exercise is designe
 
 
 
-**Sorting (!)**
+**1. Sorting (!)**
 
 1. Write another program that asks the user to input five different integers. Using `if` or `if-else` statements ***only\***, display the numbers in increasing order. E.g. user inputs: `5`, ` 2`, `11`, `1`, ` 4`. Then the program outputs: `1` , ` 2`, ` 4`, ` 5`, ` 11`.
 

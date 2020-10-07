@@ -2,8 +2,6 @@
 
 **Week1 - Introduction to Visual Studio and Simple programs**
 
-------
-
 
 
 ### Lab Summary
@@ -18,7 +16,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 This Lab aims to achive the following objective(s) below:
 			
-**PO.1**:  Introduce the development environment and programming language you will be using for this 			module.
+**PO.1**:  Introduce the development environment and programming language you will be using for this module.
 
 
 
@@ -65,8 +63,6 @@ C# (pronounced *C-Sharp*, like the musical note) is a general purpose, multi par
 
 **Before you continue :** make sure you have access to Visual Studio. As you are about to begin on your UCLAN programming adventure. 
 
-
-
 #### 1. Creating your first "New Project"
 
 When you first start Visual Studio, you may be asked what settings you wish to use. Select **Visual C# Development Settings**. This should only happen the first time you run it.
@@ -101,13 +97,13 @@ Once you have created your project Visual Studio should look something similar t
 This is the main area. The code editor is a fairly standard text editor for writing/editing your code. You will notice that some of the words are coloured. This feature is known as **Syntax Highlighting**. It identifies different types of programming keywords. You will find this becomes more useful as your program abiliites improve and you gain more experience.
 
 
+
 ##### Solution Explorer 
 
 The solution explorer contains all the files and references used by your project.
 
 - In your early programs you will have only one file of interest, called `Program.cs` by default. This is the file open in the text editor. You can rename it if you wish, and in later programs you might want to create multiple files to help structure your programs.
 - The files are collected into a `project`, which you called `TestApp`. This is in turn collected into a `solution` also called TestApp. This higher level structure is only important for larger programs.
-
 
 
 
@@ -194,6 +190,8 @@ Now it is time to create our very first program, follow the instructions below:
 
 2. Compile and run your program by pressing the **Play button** in the toolbar.
    
+   
+   
 3. Wait a minute what happend? Nothing or did something flicker? Why? Well the program you have written simply just writes a line of text to the console. Once your program has finished displaying the text is exits. To see our hardwork, we need to add a line to pause while we look at the program result. Add the following statement underneath the statement you added previously.
 
    ```c#
@@ -206,7 +204,6 @@ Now it is time to create our very first program, follow the instructions below:
 
 4. Now run it again. This time it should display the text and then wait for you to input something into the console window. 
 
-   
 
 ------
 
@@ -239,7 +236,7 @@ There are several different ways of running your program inside of Visual Studio
 **Tips: **
 
 - In **Microsoft Windows** you can double click the application to run it like any other program.
-- **Quick Bonus** - To change the icon for the application: select the project in the Solution Explorer, right click, Properties, change icon at bottom of “Application” tab (use the .ico file provided with this week’s material on the module webpage). Changing the icons only affects the executable when you run it from Windows, not when running from within Visual Studio. Try it now, it will change what you see in the task bar and in the top left of the console window.
+- To change the icon for the application: select the project in the Solution Explorer, right click, Properties, change icon at bottom of “Application” tab (use the .ico file provided with this week’s material on the module webpage). Changing the icons only affects the executable when you run it from Windows, not when running from within Visual Studio. Try it now, it will change what you see in the task bar and in the top left of the console window.
 
 
 
@@ -271,6 +268,7 @@ One advantage of using a IDE like Visual Studio is the error detection features 
 
 1. Hover over `ReadLine`, `WriteLine` or `Console` for quick documentation.
 
+   
 
    In windows you can click on ReadLine and press F1 for full documentation. (note: recently you might need to create a Microsoft account to do this). Note that the documentation is written for experienced programmers and is too complex for novices so don’t worry about understanding it right now. However, it can sometimes be a good source for example code. You can also select errors in the Error List and press F1 for more info
 
@@ -283,23 +281,26 @@ Save your project (find Save All in the tool bars). Then create a new project fr
 
 1. Using your knowledge from the previous program, make this new program display your name on the screen. Remember to add a `Console.ReadLine();` statement so the program waits for you to press return before returning to Visual Studio.
    
+   
+   
 2. Next we write some code that will ask the user to type their name then display it. We use the `ReadLine()` method again – this method waits for the user to type something. Before we ignored what the user typed. In the first program, we ignored what the user typed. This time we will store what they type in a `string` variable. 
 
 
-   Two new concepts here, which we will see in more detail later:
+
+Two new concepts here, which we will see in more detail later:
 
    - Think of a ***variable*** as a box with a name on it that holds some information we need in the program, in this case the name typed by the user.
    -  A `string` is a sequence of characters (`char`), which can be letters, numbers or punctuation. Just what we need to hold what the user might type.
 
-   
 
-   To do this ,we have to **declare** a variable. We do this by stating what type of variable is it and provide give it a name. The code below is how we declare variable with a type of `string` called `username`:
+
+To do this ,we have to **declare** a variable. We do this by stating what type of variable is it and provide give it a name. The code below is how we declare variable with a type of `string` called `username`:
 
    ```c#
    string username;
    ```
 
-   Put this declaration at the start of your program (i.e. inside the braces `{` `}` of `Main`, but before the Write/ReadLines statements that you have written).
+Put this declaration at the start of your program (i.e. inside the braces `{` `}` of `Main`, but before the Write/ReadLines statements that you have written).
 
 
 3. Now on a new line add the following statement after the delcaration you made in the previous step.
@@ -332,6 +333,8 @@ Now let's make some improvements to the user interface.
    ```
 
     **Note:** the squared brackets represent input from the user.
+
+   
 
 3. We can write out text and variables together. Examine the following statement:
 
@@ -388,11 +391,10 @@ Create another new project, this time call is **SimpleOperators**. Now in the la
    
 4. Add further code, to ask for and input heights for your two neighbours. This code will clearly be very similar to the code you already have. But you will need more variables for these new heights. 
 
-   
 
 ------
 
-Now time for some fun. Let's perform some calculations. Imagine a different program with two integers `A` and `B`. I want to put their **sum** (`+`) in another integer `c`. This is how to do it:
+Now time for some fun. Let's perform some calculations. Imagine a different program with two integers `a` and `b`. I want to put their **sum** (`+`) in another integer `c`. This is how to do it:
 
 ```c#
 int c;
@@ -419,15 +421,16 @@ Now let's get back to reality. In your program you should have three heights. No
 
 2. Now use arithmetic to calcualte the MEAN of your three height variables and assign the result to the `averageHeight` variable you declared in the previous step.
 
-   **Note:** To calculate the MEAN you the work out the sum total of the three heights and divide by 3.\
+   **Note:** To calculate the MEAN you the work out the sum total of the three heights and divide by the total number of variables (`3`).
 
    
 
 3. Finally display the average height with a suitable message.
    
+   
 4. Update your program to output the average height in inches. To convert cm to inches, divide by 2.54. 
 
-   - Depending how you do this you may get an error. The problem is that the height in inches is no longer an integer, as it has a decimal point (e.g 72.4 inches). This is called a ***floating point\*** number.
+   - Depending how you do this you may get an error. The problem is that the height in inches is no longer an integer, as it has a decimal point (e.g 72.4 inches). This is called a **floating point** number.
 
    - You can make a variable for a floating point number using the `double` type instead of `int`. Use a variable like this to help solve any errors:
 
@@ -438,25 +441,27 @@ Now let's get back to reality. In your program you should have three heights. No
    
 
 5. Your floating point output will probably have too many decimal places and be unpleasant to read, e.g. you might get a result like `48.1234812542735 inches`. You can solve this by using `{0:F2}` instead of `{0}` in your `WriteLine` method. This will display a fixed 2 decimal places only, e.g. `48.12`. There are other formatting possibilities, which we will discover in later weeks.
+   
 
 6. Finally, update your program again to output the average height in feet and inches, e.g. 70 inches is 5 feet 10 inches. Format the output message nicely.
 
-   - **Tip:** Must calculate a remainder for this: use the `%` sign like the `/` sign. For example;
-
+   
+- **Tip:** Must calculate a remainder for this: use the `%` sign like the `/` sign. For example;
+   
      ```c#
      70 / 12 = 5  // feet
      70 % 12 = 10 // inches (as this is the remainder i.e (70 = 5x12 + 10))
-     ```
-
-      This needs some initiative, but ask your tutor if you need help. 
-
-   - **Note:** You can use integer or floating point values, it's up to you
+  ```
+   
+   This needs some initiative, but ask your tutor if you need help. 
+   
+   - **Note:** You can use integer or floating point values, it's up to you.
 
 
 
 ------
 
-***Disclaimer **: *The following "Advanced Challenges" are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don't stress about them.*
+**Disclaimer **: *The following "Advanced Challenges" are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don't stress about them.*
 
 ------
 
