@@ -22,8 +22,6 @@ This Lab aims to achive the following objective(s) below:
 
 
 
-
-
 ------
 
 ### Lab Activity
@@ -165,11 +163,11 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 5. Add another `if-else` statement that checks if the user was born in the same year as yourself. It should display `You were born in the same year as me!` or `You weren't born in the same year as me`.
 
+   
 
+   **Advanced Challenge**
 
-##### **Advanced Challenge **
-
-Can you work out how to update your code to say one of `You're older than me`, `You're younger than me` or `You're the same age as me`?
+   Can you work out how to update your code to say one of `You're older than me`, `You're younger than me` or `You're the same age as me`?
 
 
 
@@ -177,9 +175,9 @@ Can you work out how to update your code to say one of `You're older than me`, `
 
 #### STAGE 1
 
-------
+This stage consists of three elements: ***A Common Error: Integer divided by Integer***, ***Currency Conversion***, ***Maximum Number***.
 
-This stage consists of three eleements: ***A Common Error: Integer divided by Integer***, ***Currency Conversion***, ***Maximum Number***.
+------
 
 
 
@@ -200,12 +198,82 @@ This stage consists of three eleements: ***A Common Error: Integer divided by In
 
    
 
-3. Run the program. That's strange... it says `1/2 = 0`
+3. Run the program. That's strange... it says `1/2 = 0` . 
 
- 
+   
 
-Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
+   Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
+   
 
-On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
+   ![img](https://raw.githubusercontent.com/CO1404-Introduction-to-Programming/CO1404-Semester-1/master/Images/mag_glass.png): On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
 
-![img](file:////Users/dan/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image002.jpg) On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
+   
+
+4. Fix the problem by writing `1.0` and ` 2.0` instead. This shows that they are **floating point values** and indicates to C# that you want a floating point answer. The program will run correctly now.
+
+
+   This issue can often catch you out and cause unexpected bugs. It usually happens when you are programming a formula. Here's a standard question for novice programmers where you must be careful about this problem:
+
+   
+
+5. Remove that code and write a program that asks the user for a temperature in Celsius (an integer). Convert this temperature to Fahrenheit using the formula:
+
+   ```text
+    Fahrenheit = Celsius * (9/5) + 32
+   ```
+
+     **Tip :** Watch the brackets. Display the result as a `double` (example 25C = 77.00F).
+
+
+
+##### **Currency Conversion**
+
+1. Create a new Visual Studio C# Console project called **CurrencyConverter**.
+
+   
+
+2. Write a program that inputs from the user an amount in pounds (£) and converts it to an amount in dollars ($), displaying the result. At first assume that the exchange rate is $1.5 for £1. Check your result carefully and make sure you are converting in the correct direction.
+
+   
+
+3. Update your program so the user can first enter the exchange rate to use instead of just using 1.5.
+
+   
+
+4. Extend the program further by first prompting the user `"Type 1 to convert from £ to $, or type 2 to convert from $ to £`. Then read the user's choice (as an integer). Use an `if-else` statement that tests if this integer is equal to 1 as its condition. In the first block of the if statement, put the code to convert from £ to $, and in the second block (`else`) add code to convert the other way, from $ to £. The code to convert the other way is almost the same.
+
+
+   **Advanced Challenge**
+
+   Clearly there is a lot of similar code between the if and else blocks here. Try to reduce the amount of duplicate code to the minimum. You can get it down to only one line in each block of the 'if-else' statement, although it will need some thought.
+
+
+
+**Maximum Number**
+
+1. Write a program that asks the user to input five different integers. Using `if` statements work out which is the maximum of the five numbers and display it. You will need several `if` statements to do this exercise. Ask your tutor for advice if necessary.
+
+
+
+**If you have completed all three elements, you have sucessfully completed stage one**
+
+
+
+------
+
+#### STAGE 2
+
+This stage consists of a single element: ***Sorting***. This exercise is designed to very difficult but you have already reached the first class stage for this lab sheet so challenges here are supposed to be very tough. You will gain experience just by thinking about this exercise.
+
+------
+
+
+
+**Sorting (!)**
+
+1. Write another program that asks the user to input five different integers. Using `if` or `if-else` statements ***only\***, display the numbers in increasing order. E.g. user inputs: `5`, ` 2`, `11`, `1`, ` 4`. Then the program outputs: `1` , ` 2`, ` 4`, ` 5`, ` 11`.
+
+   
+
+   **Hint :** *Possible approach: Compare the 2nd, 3rd, 4th and 5th values in turn with the 1st value. If any value is less than the 1st value then swap it with the first value. Think carefully how to swap two variables. Now do the same comparing/swapping with values 3,4 & 5 against value 2. Then compare/swap 4, 5 against 3, then finally 5 against 4. There's a pattern there. Ten 'if' statements in total. Good luck!*
+
