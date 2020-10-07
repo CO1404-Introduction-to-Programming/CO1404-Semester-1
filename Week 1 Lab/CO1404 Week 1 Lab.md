@@ -22,11 +22,6 @@ This Lab aims to achive the following objective(s) below:
 
 
 
-#### Work Sheet Key
-
-All the worksheets for this Module follow the same common conventions to assist you throughout.
-<Insert Convertions here>
-
 ------
 
 ### Reading Material
@@ -37,7 +32,7 @@ Below is some light reading material to accompany the lab worksheet.
 
 #### Microsoft Visual Studio
 
-Throughout this moudle will will be using ***Microsoft Visual Studio***. As we have discssed in the lecture it is and IDE (Integrated Development Envrionment). This software has been made avaiable to you in many different locations to accomadate your learning preferences. The software is readily avaiable at the following locations:
+Throughout this module will will be using ***Microsoft Visual Studio***. As we have discussed in the lecture it is and IDE (Integrated Development Environment). This software has been made available to you in many different locations to accommodate your learning preferences. The software is readily available at the following locations:
 
 - **UCLAN Lab PC's** - via the Uclan Network.
 - **Azure Labs Virtual Machine** - Visit https://labs.azure.com/ (Note: you will have to have registered, please check your UCLAN email for a registration link)
@@ -82,7 +77,7 @@ To create a new project we:
 
 1. On the **Start Page** choose `Create new project…` . Alternatively, in the main menu choose `File > New >  Project…`.
 2. From the left choose `Installed > Visual C#`, then from the list on the right choose `Console App (.NET framework)`.
-3. Towards the bottom of the window, give a name to your project. Call this project **TestApp**. Also browse to a suitable location – I suggest you make a new folder **CO1404 Introduction to programming** amongst your documents just for this module. It is inside of that folder I would reccommend you save all your projects associated with this module.
+3. Towards the bottom of the window, give a name to your project. Call this project **TestApp**. Also browse to a suitable location – I suggest you make a new folder **CO1404 Introduction to programming** amongst your documents just for this module. It is inside of that folder I would recommend you save all your projects associated with this module.
 4. Finally, make sure the option `Create directory for solution` is **unchecked**. The remaining settings should be fine, so now press OK.
 
 
@@ -198,8 +193,7 @@ Now it is time to create our very first program, follow the instructions below:
      
 
 2. Compile and run your program by pressing the **Play button** in the toolbar.
-    
-
+   
 3. Wait a minute what happend? Nothing or did something flicker? Why? Well the program you have written simply just writes a line of text to the console. Once your program has finished displaying the text is exits. To see our hardwork, we need to add a line to pause while we look at the program result. Add the following statement underneath the statement you added previously.
 
    ```c#
@@ -289,7 +283,6 @@ Save your project (find Save All in the tool bars). Then create a new project fr
 
 1. Using your knowledge from the previous program, make this new program display your name on the screen. Remember to add a `Console.ReadLine();` statement so the program waits for you to press return before returning to Visual Studio.
    
-
 2. Next we write some code that will ask the user to type their name then display it. We use the `ReadLine()` method again – this method waits for the user to type something. Before we ignored what the user typed. In the first program, we ignored what the user typed. This time we will store what they type in a `string` variable. 
 
 
@@ -307,7 +300,7 @@ Save your project (find Save All in the tool bars). Then create a new project fr
    ```
 
    Put this declaration at the start of your program (i.e. inside the braces `{` `}` of `Main`, but before the Write/ReadLines statements that you have written).
-   
+
 
 3. Now on a new line add the following statement after the delcaration you made in the previous step.
 
@@ -317,7 +310,6 @@ Save your project (find Save All in the tool bars). Then create a new project fr
 
    This will now assign the variable `username` with the text inputted by the user as a result of the `Console.Readline()` method.
    
-
 4. Now update the `Console.WriteLine("Hello World");` statement to output the `username` variable instead. When you get it right you should be able to type your name (or anything) and the program will repeat it back at you.
 
    **Tip : ** you don’t put quotes around variable names.
@@ -394,7 +386,6 @@ Create another new project, this time call is **SimpleOperators**. Now in the la
 
 3. Now complete the input part of the program: you already have the code to input your own height. Add some code to write some text to the screen first so the user knows what they are doing, e.g. `“Please enter your height in cm: “`.
    
-
 4. Add further code, to ask for and input heights for your two neighbours. This code will clearly be very similar to the code you already have. But you will need more variables for these new heights. 
 
    
@@ -434,7 +425,6 @@ Now let's get back to reality. In your program you should have three heights. No
 
 3. Finally display the average height with a suitable message.
    
-
 4. Update your program to output the average height in inches. To convert cm to inches, divide by 2.54. 
 
    - Depending how you do this you may get an error. The problem is that the height in inches is no longer an integer, as it has a decimal point (e.g 72.4 inches). This is called a ***floating point\*** number.
