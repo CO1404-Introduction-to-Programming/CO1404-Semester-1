@@ -204,8 +204,7 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
    Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
 
    
-
-
+   
    ![img](https://raw.githubusercontent.com/CO1404-Introduction-to-Programming/CO1404-Semester-1/master/Images/mag_glass.png): On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
 
    
@@ -243,6 +242,8 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
    
 
 4. Extend the program further by first prompting the user `"Type 1 to convert from £ to $, or type 2 to convert from $ to £`. Then read the user's choice (as an integer). Use an `if-else` statement that tests if this integer is equal to 1 as its condition. In the first block of the if statement, put the code to convert from £ to $, and in the second block (`else`) add code to convert the other way, from $ to £. The code to convert the other way is almost the same.
+
+   
 
 **Advanced Challenge**
 
