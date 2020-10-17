@@ -1,10 +1,14 @@
+<img  align="right" src="https://raw.githubusercontent.com/UCLAN-Programming/CO1404/70743259b9a3cc7da1aa57548388b5b7c5703dc6/Images/uclan-logo-2020.svg" style="zoom:40%" />
+
+
+
 # CO1404 : Introduction to Programming 
 
-**Week 2 – Variables, Operators and Conditions**
+<p style="font-size:20px;"> <b>Lab 2</b> : <span style="color:#3664ad;" ><b>Variables, Operators and Conditions</b></span></p>
 
 
 
-### Lab Summary
+## Lab Summary
 
 This lab worksheet helps you write your first programs. Students who have experience programming should find it straightforward at first. However, there will be advanced questions later on. There's a lot of reading in this worksheet as we introduce the tools required. Later worksheets will tend to be shorter, with more work for you to do!
 
@@ -12,7 +16,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 
 
-#### **Objectives**
+## **Objectives**
 
 This Lab aims to achieve the following objective(s) below:
 			
@@ -20,20 +24,21 @@ This Lab aims to achieve the following objective(s) below:
 
 
 
-------
-
-### Lab Activity
+## Lab Activity
 
 This weeks lab activity begins with three precursor tasks (Variable Declarations, Variables and Operators and if statements). These will help you complete stages 1 and 2 marked in the lab sheet. **Stage 1** is the ***absolute minimum*** point you should reach. Hopefully you can reach it in the lab session, if not use the drop-in help sessions and your own time to catch up. Reaching stage 2 suggests you are on target for a top class mark for the module. Set your goals sensibly - don't just aim for the minimum or you may struggle to pass the module.
 
 
-**Disclaimer **: *The "Advanced Challenges" are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don't stress about them.*
+
+> **Disclaimer:** 
+>
+> The "Advanced Challenges" are intended as fun exercises designed to push your knowledge to the limits. I encourage you all to give them ago, ask questions if you get stuck but most importantly don't stress about them.
 
 ------
 
 
 
-#### **Variables Declarations**
+### **Variables Declarations**
 
  For each of the following variable declarations, decide if it is: 
 
@@ -66,13 +71,15 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 
 
-#### **Variables and Operators**
+### **Variables and Operators**
 
 1. Create a new Visual Studio C# Console project called **CalculateTax**. Refer to last week's worksheet if you have forgotten how to create a new project.
    
 
    
 2. Copy the code below into the correct place in the shell code. Again, refer to last week's lecture / lab or ask the tutor if you are not sure where to put the code:
+
+   
 
    ```C#
    double itemPrice;
@@ -92,6 +99,8 @@ Write your answers in a document, paper, or into the worksheet and save it later
    
    ```
 
+   
+
 3. Now you maybe wondering, "The code you told me to copy has errors". Unfortunately, it does. Sorry about that. Fix the errors so that the program will run.
 
    
@@ -102,6 +111,8 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 5. After displaying the total value with tax, add some extra code to the program to ask the user `"How many items do you want to buy?"`. Read an integer from the user for their answer, then calculate the `total cost` (`totalPrice * number of items`). Output a final message in this style:
 
+   
+
    ```
    The price for 4 items is 57.60
    ```
@@ -110,12 +121,14 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 6. Add some sensible comments to your code. To comment your code you use `// <some comment>`. For example:
 
+   
+
    ```c#
    double reactorCoreTemp;
    
    if (reactorCoreTemp > 20.5)
    {
-   	Warning.redAlert("We have a big problem"); // Sounds the alarm.
+   	Warning.redAlert("We have a big problem"); // Sounds the alarm. <--- this is the comment
    }
    else
    {
@@ -123,14 +136,17 @@ Write your answers in a document, paper, or into the worksheet and save it later
    }
    ```
 
+  
 
-   If you are unsure  about your comments, please check them with your tutor. 
+ If you are unsure  about your comments, please check them with your tutor. 
 
 
 
-#### An `if` Statement
+### An `if` Statement
 
 1. Create a new Visual Studio C# Console project called **BirthYear** and copy the code below into the correct place in the shell code:
+
+   
 
    ```c#
    int year;
@@ -155,7 +171,9 @@ Write your answers in a document, paper, or into the worksheet and save it later
    
 
 3. Run the program and it will tell you whether your birth year was a leap year. It works by seeing if there is a 0 remainder after dividing the year by 4, which is the same as saying that the year divides by 4 exactly - the main rule for leap years (actually there are other rules for leap years but they don't affect any recent years).
+
    
+
 4. Add an `else` statement to display the message `"You were not born in a leap year"` appropriately. Check the lecture notes to see where to put an else statement (alternatively, have another look at the Reactor Core example in the previous section) . Be precise and try to line things up in the same way as the lecture.
 
    
@@ -170,17 +188,15 @@ Write your answers in a document, paper, or into the worksheet and save it later
 
 
 
-------
 
-#### STAGE 1
 
-This stage consists of three elements: ***A Common Error: Integer divided by Integer***, ***Currency Conversion***, ***Maximum Number***.
+## STAGE 1
 
-------
+This stage consists of three elements: ***A Common Error: Integer divided by Integer***, ***Currency Conversion***, ***Maximum Number****
 
 
 
-##### 1. A Common Error: Integer divided by Integer
+### 1. A Common Error: Integer divided by Integer
 
 1. Create a new Visual Studio C# Console project called **IntegerDivision**.
 
@@ -188,6 +204,8 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 2. Copy the code below into the correct place in the shell code:
 
+    
+   
    ```c#
    double half = 1/2;
    Console.Write("One half (1/2) = {0}", half);
@@ -197,15 +215,17 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
 
 
-3. Run the program. That's strange... it says `1/2 = 0` . 
+3. Run the program. That's strange... it says `1 / 2 = 0` . 
 
    
 
-   Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
-
-   
-   
-   ![img](https://raw.githubusercontent.com/CO1404-Introduction-to-Programming/CO1404-Semester-1/master/Images/mag_glass.png): On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
+   > **Information:**
+   >
+   > Why does this happen? The computer calculates the division `1/2`, but as both 1 and 2 are integers (there's no decimal point) it thinks you want an integer as an answer. So it rounds the result 0.5 down (to the floor) to 0. The computer does this *before* it sees that the result is being put into a double (remember: *computers are stupid*). 
+   >
+   > 
+   >
+   > On a different point, this is one of the rare times that C# will convert types automatically, it converts its integer answer 0 to a double without giving you an error.
 
    
 
@@ -213,21 +233,29 @@ This stage consists of three elements: ***A Common Error: Integer divided by Int
 
    
 
-   This issue can often catch you out and cause unexpected bugs. It usually happens when you are programming a formula. Here's a standard question for novice programmers where you must be careful about this problem:
+   > **Information**
+   >
+   > This issue can often catch you out and cause unexpected bugs. It usually happens when you are programming a formula. Here's a standard question for novice programmers where you must be careful about this problem:
 
    
 
 5. Remove that code and write a program that asks the user for a temperature in Celsius (an integer). Convert this temperature to Fahrenheit using the formula:
 
+   
+   
    ```text
-    Fahrenheit = Celsius * (9/5) + 32
+ Fahrenheit = Celsius * (9/5) + 32
    ```
+   
+    
+   
+   > **Tip :** 
+   >
+   > Watch the brackets. Display the result as a `double` (example 25C = 77.00F).
 
-     **Tip :** Watch the brackets. Display the result as a `double` (example 25C = 77.00F).
 
 
-
-##### **2. Currency Conversion**
+### **2. Currency Conversion**
 
 1. Create a new Visual Studio C# Console project called **CurrencyConverter**.
 
@@ -251,31 +279,40 @@ Clearly there is a lot of similar code between the if and else blocks here. Try 
 
 
 
-**3. Maximum Number**
+### **3. Maximum Number**
 
 1. Write a program that asks the user to input five different integers. Using `if` statements work out which is the maximum of the five numbers and display it. You will need several `if` statements to do this exercise. Ask your tutor for advice if necessary.
 
 
 
-**If you have completed all three elements, you have successfully completed stage one**
+<p style="font-size:14px;"> <span style="text-align: center;;"> <span style="color:#3664ad;" ><b>If you have completed all three elements, you have successfully completed stage one!</b></span></p>
 
 
 
-------
-
-#### STAGE 2
+## STAGE 2
 
 This stage consists of a single element: ***Sorting***. This exercise is designed to very difficult but you have already reached the first class stage for this lab sheet so challenges here are supposed to be very tough. You will gain experience just by thinking about this exercise.
 
-------
 
 
-
-**1. Sorting (!)**
+### **1. Sorting (!)**
 
 1. Write another program that asks the user to input five different integers. Using `if` or `if-else` statements ***only\***, display the numbers in increasing order. E.g. user inputs: `5`, ` 2`, `11`, `1`, ` 4`. Then the program outputs: `1` , ` 2`, ` 4`, ` 5`, ` 11`.
 
    
 
-   **Hint :** *Possible approach: Compare the 2nd, 3rd, 4th and 5th values in turn with the 1st value. If any value is less than the 1st value then swap it with the first value. Think carefully how to swap two variables. Now do the same comparing/swapping with values 3,4 & 5 against value 2. Then compare/swap 4, 5 against 3, then finally 5 against 4. There's a pattern there. Ten 'if' statements in total. Good luck!*
+   > **Hint :** 
+   >
+   > Possible approach: Compare the 2nd, 3rd, 4th and 5th values in turn with the 1st value. If any value is less than the 1st value then swap it with the first value. Think carefully how to swap two variables. 
+   
+   
+   
+2. Now do the same comparing/swapping with values 3,4 & 5 against value 2. Then compare/swap 4, 5 against 3, then finally 5 against 4. There's a pattern there. Ten 'if' statements in total. 
 
+   
+
+   Good luck!
+
+
+
+<div class=footer><div class=footer-text>  CO1404 Introcution to Programming | LAB 1</div></div>
