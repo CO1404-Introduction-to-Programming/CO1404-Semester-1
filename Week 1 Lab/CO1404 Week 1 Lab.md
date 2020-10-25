@@ -4,7 +4,7 @@
 
 # CO1404 : Introduction to Programming 
 
-<p style="font-size:20px;"> <b>Lab 1</b> : <span style="color:#3664ad;" ><b>Introduction to Programming</b></span></p>
+
 
 
 
