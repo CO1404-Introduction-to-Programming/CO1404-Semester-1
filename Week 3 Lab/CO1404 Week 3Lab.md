@@ -20,7 +20,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 This Lab aims to achieve the following objective(s) below:
 			
-**PO.1**: xxxxxxx
+**PO.1**: **Explore operators, chaining & nesting statements and loops**
 
 
 
