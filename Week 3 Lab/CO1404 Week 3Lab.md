@@ -4,7 +4,7 @@
 
 # CO1404 : Introduction to Programming 
 
-<p style="font-size:20px;"> <b>Lab 3</b> : <span style="color:#3664ad;" ><b>Week-3 - More on Operators & Conditions plus Introduction to Loops</b></span></p>
+<p style="font-size:20px;"> <b>Lab 3</b> : <span style="color:#3664ad;" ><b>More on Operators & Conditions plus Introduction to Loops</b></span></p>
 
 
 
