@@ -26,7 +26,14 @@ This Lab aims to achieve the following objective(s) below:
 
 ## Lab Activity
 
-This weeks lab activity begins with three precursor tasks (Variable Declarations, Variables and Operators and if statements). These will help you complete stages 1 and 2 marked in the lab sheet. **Stage 1** is the ***absolute minimum*** point you should reach. Hopefully you can reach it in the lab session, if not use the drop-in help sessions and your own time to catch up. Reaching stage 2 suggests you are on target for a top class mark for the module. Set your goals sensibly - don't just aim for the minimum or you may struggle to pass the module.
+This weeks lab activity begins with three precursor tasks: 
+
+- Expressions / Operator Precedence, 
+- Increment, Decrement and Assignment Operators
+- `And`, `OR` in `if` Statements
+- A simple `while` Loop
+
+Complete these tasks to reinforce what was discussed in this weeks lecture. The main event for this week is building your very own text based adventure game! This will require you to progress through **Stage 1** and *attempt* aspects from **Stage 2**.
 
 
 
@@ -230,6 +237,8 @@ Now we will use the techniques we have covered to create a text-based adventure 
    
 5. Ask the user whether they want to be warrior or scout, and based on their answer assign "Warrior" or "Scout" to your `characterType` variable. 
 
+   
+   
    > In this exercise the exact text of the user messages and the form of the user input is up to you. You may hit problems if you get incorrect user input, e.g. if you are expecting the user to type "Warrior" with a capital 'W', but they type it with a lower case 'w'. Don't worry about the problem this week, we will look at dealing with incorrect input next week.
 
 
@@ -238,8 +247,9 @@ Now we will use the techniques we have covered to create a text-based adventure 
 
 At the start of the adventure, the character first reaches a huge stone door, which won't open. A huge voice booms out:
 
-| ***Answer this riddle to pass safely: What can you catch but cannot throw?*** |
-| :----------------------------------------------------------: |
+
+
+ ***Answer this riddle to pass safely: What can you catch but cannot throw?***
 
 
 
@@ -279,6 +289,8 @@ At the start of the adventure, the character first reaches a huge stone door, wh
 
 Next the character meets a dragon blocking the way. Now there is a *turn-based* battle with the character first attacking the dragon, then the dragon counter-attacking. This will repeat as long as both character and dragon are still alive (health > 0).
 
+
+
 1. Display text to introduce this new trial. Then declare an integer variable called `dragonHealth`. Initialise it to `150` (it's not a very big dragon...  :dragon: ).
 
    
@@ -294,6 +306,8 @@ Next the character meets a dragon blocking the way. Now there is a *turn-based* 
 	The dragon counters for 30 damage, your health is 70
 	```
 	
+	
+	
 4. After this `while` loop, there are three possible outcomes: the character is dead, the dragon is dead, or both are dead. Use `if-else` statements to run different code for each outcome, think carefully about the conditions required:
 
    
@@ -304,9 +318,11 @@ Next the character meets a dragon blocking the way. Now there is a *turn-based* 
 
    - If the character is dead and the dragon is alive, display a game over message and wait for a key press. Then add this statement to quit the program:
 
-           ```c#
+     ```c#
      return;
-           ```
+     ```
+
+     
 
    - The only other case is if character and dragon died in the same turn. Display a different game over message, wait for a key press and quit the program. 
 
@@ -316,38 +332,114 @@ Next the character meets a dragon blocking the way. Now there is a *turn-based* 
 
  
 
-
-
-
-
 <p style="font-size:14px;"> <span style="text-align: center;;"> <span style="color:#3664ad;" ><b>If you have completed all three elements, you have successfully completed stage one!</b></span></p>
 
 
 
-## STAGE 2
+## STAGE 2 - Improving the game
 
-This stage consists of a single element: ***Sorting***. This exercise is designed to very difficult but you have already reached the first class stage for this lab sheet so challenges here are supposed to be very tough. You will gain experience just by thinking about this exercise.
+There are many ways we can improve and extend a game like this. Here are some suggestions, do them in any order you wish or even implement some of your own. There's lots of work here, use any of these exercises to improve your skill outside of lab time:
 
+1. When battling the dragon, allow the user to choose to attack the head, body or legs of the dragon. 
 
+   - The head will deal damage 1 to 50, but the dragon's counter attack will give damage of 1 to 40. 
 
-### **1. Sorting (!)**
+   - Attacking the body damages 1-30, with a counter attack of 10-20. 
 
-1. Write another program that asks the user to input five different integers. Using `if` or `if-else` statements ***only\***, display the numbers in increasing order. E.g. user inputs: `5`, ` 2`, `11`, `1`, ` 4`. Then the program outputs: `1` , ` 2`, ` 4`, ` 5`, ` 11`.
+   - Attacking the legs damages 1-10 with a counter attack of 1-5.
 
-   
+     
 
-   > **Hint :** 
-   >
-   > Possible approach: Compare the 2nd, 3rd, 4th and 5th values in turn with the 1st value. If any value is less than the 1st value then swap it with the first value. Think carefully how to swap two variables. 
-   
-   
-   
-2. Now do the same comparing/swapping with values 3,4 & 5 against value 2. Then compare/swap 4, 5 against 3, then finally 5 against 4. There's a pattern there. Ten 'if' statements in total. 
+2. Have a warrior deal **and** receive up to 10 extra points of damage than a scout.
 
    
 
-   Good luck!
+3. Currently the dragon gets a final attack in the turn that it dies, change the program logic so this doesn't happen.
+
+   
+
+4. In the riddle trial, allow the user to have three attempts to guess, allowing them through on their first correct guess, damaging them with fire only on the third incorrect guess. This is probably best done with a loop, it is quite tricky to get all the possibilities correct - test carefully.
+
+   
+
+5. Have the riddle be chosen at random from one of:
+
+   - *What can you catch but cannot throw? A cold.*
+
+   - *I can run but not walk. Thoughts follow close behind me. What am I? A nose.*
+
+   - *Give me food, and I will live; give me water, and I will die. What am I? Fire.*
+
+     
+
+6. Add a third trial that asks three maths problems, which must be correctly solved to pass. Choose two random numbers *and* a random operator, then ask & check the user's answer, i.e.
+
+      ```c#
+   What is 24 + 65?
+   What is 13 * 19?
+      ```
+
+   
+
+   ### Advanced Challenges
+
+   1. Add a maze trial...! 
+
+      ```c#
+      You can go North, South or West. Which way [N/S/W]?
+      ```
+
+      
+
+   2. Look at the strange looking code below. Refer to the advanced note about the `++` and `--` operators in the lecture notes. Now, *without trying the code in the compiler*, try to work out what value will be displayed as a result. 
+
+      **Don't cheat**, as that makes the exercise useless. When you do have an idea then test the program and see if you were correct. Be ready to explain your answer, your tutor has my explanation.
+
+      
+
+      > Please Note
+      >
+      > *This question is beyond the module material. It is only here as a puzzle for those who are interested in the deeper detail of the language. This kind of code is extremely unreadable and should never be written in real programs.*
+
+      ```c#
+      int value = 5;
+      int result = value++ + ++value;
+      Console.WriteLine(result);
+      Console.ReadLine();
+      ```
+
+      
+
+      What about this variation?
+
+      ```
+      int result = ++value + ++value;
+      ```
+
+      
+
+      Can you explain why this variation of the code compiles correctly despite the extra `+` sign?
+
+      ```c#
+      int result = value++ + + ++value;
+      ```
+
+      
+
+      So what would be the result with this variation?
+
+      ```c#
+      int result = value++ + - ++value;
+      ```
+
+      
+
+      Hopefully it should now be clear why I recommend only using `++` or `--` in expressions with no other operators.
+
+      
+
+   
 
 
 
-<div class=footer><div class=footer-text>  CO1404 Introcution to Programming | LAB 1</div></div>
+<div class=footer><div class=footer-text>  CO1404 Introcution to Programming | LAB 3</div></div>
