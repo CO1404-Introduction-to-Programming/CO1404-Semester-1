@@ -26,7 +26,7 @@ This Lab aims to achieve the following objective(s) below:
 
 ## Lab Activity
 
-This weeks lab activity begins with three precursor tasks: 
+This weeks lab activity begins with precursor tasks: 
 
 - Expressions / Operator Precedence, 
 - Increment, Decrement and Assignment Operators
@@ -377,7 +377,7 @@ There are many ways we can improve and extend a game like this. Here are some su
       ```c#
    What is 24 + 65?
    What is 13 * 19?
-      ```
+   ```
 
    
 
