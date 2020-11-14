@@ -387,5 +387,4 @@ for (int n2 = 1; n1 < 1000; ??? )
 
 
 
-<div class=footer><div class=footer-text>  CO1404 Introcution to Programming</div></div>
-
+<div class=footer><div class=footer-text>  CO1404 Introcution to Programming | Lab 4</div></div>
