@@ -280,7 +280,7 @@ string dayName = new DateTime(year, month, day).ToString("dddd");
 
 ## STAGE 2
 
-This stage consists of a single element: ***Sorting***. This exercise is designed to very difficult but you have already reached the first class stage for this lab sheet so challenges here are supposed to be very tough. You will gain experience just by thinking about this exercise.
+These exercises have been designed to very difficult but you have already reached the first class stage for this lab sheet so challenges here are supposed to be very tough. You will gain experience just by thinking about this exercise.
 
 
 
@@ -326,7 +326,7 @@ int weekDay = (int)(new DateTime(year, month, 1).DayOfWeek);
 
 
 
->*Note**
+>**Note**
 >
 >I also suggest to initialise your `weekDay` variable with this value, so that the extra lines used to create the grid effect take account of the extra `--`.
 
