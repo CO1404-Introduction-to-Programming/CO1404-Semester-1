@@ -10,7 +10,7 @@
 
 ## Lab Summary
 
-This lab worksheet helps you write your first programs. Students who have experience programming should find it straightforward at first. However, there will be advanced questions later on. There's a lot of reading in this worksheet as we introduce the tools required. Later worksheets will tend to be shorter, with more work for you to do!
+The lab worksheets are designed to help you write your first programs. Students who have experience programming should find it straightforward at first. However, there will be advanced questions later on. There's a lot of reading in this worksheet as we introduce the tools required. Later worksheets will tend to be shorter, with more work for you to do!
 
 **Remember:** If you have any questions or require assistance, please get your tutors attention. We are all here to help!
 
@@ -20,7 +20,7 @@ This lab worksheet helps you write your first programs. Students who have experi
 
 This Lab aims to achieve the following objective(s) below:
 			
-**PO.1**: **Explore operators, chaining & nesting statements and loops**
+**PO.1: Implement Loops and User validation techniques**
 
 
 
@@ -315,6 +315,8 @@ Enter a year: 2011
    ```
 
    The extra `:00` indicates to pad the output with `0`'s to at least two digits
+
+
 
 ### Final Steps
 
