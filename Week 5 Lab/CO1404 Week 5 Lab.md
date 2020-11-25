@@ -24,13 +24,9 @@ The lab worksheets are designed to help you write your first programs. Students 
 
 This Lab aims to achieve the following objective(s) below:
 
-- **PO.1: Implement Loops and User validation techniques**
-
-- **PO.2: Implement Loops and User validation techniques**
-
-- **PO.3: Implement Loops and User validation techniques**
-
-  
+- •**PO.1** **:** Implement code to demonstrate variable scope, nesting loops
+- **PO.2** **:** Utilise the Visual Studio Debugging tools
+- **PO.3** **:** Recap programming concepts we have learned so far
 
 ## Lab Activity
 
@@ -503,23 +499,23 @@ Tasks for those who want to stretch themselves. This material is not necessary t
 
    - ```text
               X
-     	      XXX
-     	     XXXXX
-     	    XXXXXXX
-     	   XXXXXXXXX
-     	  XXXXXXXXXXX
-     	 XXXXXXXXXXXXX
-     	XXXXXXXXXXXXXXX
-     
+       	      XXX
+       	     XXXXX
+       	    XXXXXXX
+       	   XXXXXXXXX
+       	  XXXXXXXXXXX
+       	 XXXXXXXXXXXXX
+       	XXXXXXXXXXXXXXX
+       
      ```
 
    - ```text
        XXXX        XXXX 
-     	 XXXX      XXXX
-     	  XXXX    XXXX 
-     	   XXXX  XXXX 
-     	    XXXXXXXX
-     
+       	 XXXX      XXXX
+       	  XXXX    XXXX 
+       	   XXXX  XXXX 
+       	    XXXXXXXX
+       
      ```
 
    
